@@ -25,6 +25,11 @@
 <body>
 <div class="container">
     <div class="row">
+        <?if(isset($error)):?>
+            <div class="alert alert-danger">
+                <?=$error;?>
+            </div>
+        <?endif;?>
         <h3>AllCards</h3>
         <?if(isset($result)):?>
             <?foreach($result as $val):?>

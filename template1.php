@@ -26,9 +26,13 @@
 <div class="container">
     <div class="row">
         <h3>AllCards</h3>
+        <?if(isset($error)):?>
+        <div class="alert alert-danger">
+            <?=$error;?>
+        </div>
+        <?endif;?>
         <?if(isset($footbool)):?>
-<?
-foreach($footbool->children('m',true)->children('m',true) as $val):?>
+            <?foreach($footbool->children('m',true)->children('m',true) as $val):?>
                 <div class="col-md-3 border-coll">
                     <p>Player - <b><? echo $val->sPlayerName;?></b></p>
                     <p>Date - <b><? echo $val->dGame;?></b></p>
@@ -40,15 +44,19 @@ foreach($footbool->children('m',true)->children('m',true) as $val):?>
         <?endif;?>
     </div>
 </div>
- <div>
+
+<div class="container">
+    <div class="row">
+        <h3>Curs On Date</h3>
+        <p> Date in format Y-m-d</p>
+        <div>
             <form method="post">
                 <input type="text" name="dateCurs" placeholder="2017-09-26">
                 <button type="submit">get curs</button>
             </form>
         </div>
-
- <?if(isset($bank)):?>
-            <?foreach($bank  as $val):?>
+        <?if(isset($bank)):?>
+            <?foreach($bank as $val):?>
                 <div class="col-md-3 border-coll">
                     <ul class="list-group">
                         <li class="list-group-item"><p>Name - <b><? echo $val->Vname;?></b></p></li>
@@ -58,12 +66,6 @@ foreach($footbool->children('m',true)->children('m',true) as $val):?>
                 </div>
             <?endforeach;?>
         <?endif;?>
-
-
-
-
-
-
     </div>
 </div>
 </body>

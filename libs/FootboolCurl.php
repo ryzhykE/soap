@@ -19,7 +19,6 @@ class FootboolCurl
         "Host: footballpool.dataaccess.eu",
         "Cache-Control: no-cache",
         "Content-Type: text/xml; charset=utf-8",
-       // "Content-length:".strlen($this->xmlPostString)
    );
 
     public function __construct() {
